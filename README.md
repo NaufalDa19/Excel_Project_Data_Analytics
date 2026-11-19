@@ -1,4 +1,5 @@
 # Proyek Analitik Data Excel
 
 ## Salary Dashboard
-![1 Salary Dashboard Final Dashboard]("https://github.com/user-attachments/assets/740e6080-15f6-4c52-9724-4b7c4ce9c943")
+![1 Salary Dashboard Final Dashboard](https://github.com/user-attachments/assets/4f0e97eb-53c4-40c9-83c2-700606472f30)
+
