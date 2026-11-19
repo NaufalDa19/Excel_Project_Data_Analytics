@@ -2,13 +2,13 @@
 
 Proyek ini dikerjakan untuk mengasah skill Excel dengan mengikuti course [Excel for Data Analytics](https://www.youtube.com/watch?v=pCJ15nGFgVg) oleh Luke Barousse.
 
-## Salary Dashboard
+## :one: Salary Dashboard
 Dashboard Excel interaktif untuk melihat gaji data job dari data lowongan tahun 2023. Pengguna bisa memilih posisi (job title), negara, dan jenis pekerjaan (full time, contract, intern, dan lainnya), lalu dashboard menampilkan median gaji, platform lowongan teratas, dan jumlah lowongan yang diposting sesuai pilihan tersebut. Dashboard ini dibuat agar pencari kerja bisa membandingkan tawaran gaji dengan kondisi pasar.  
 [Lihat folder dashboard excel](<Project 1 - Dashboard>)
 
 ![1 Salary Dashboard Final Dashboard](https://github.com/user-attachments/assets/4f0e97eb-53c4-40c9-83c2-700606472f30)
 
-## Salary Analysis
+## :two: Salary Analysis
 Analisis gaji dan skill data job dari data lowongan tahun 2023, ditampilkan dalam dua chart: (1) hubungan antara jumlah skill yang diminta dan gaji, dan (2) skill teratas yang diminta di lowongan data job.
 
 Saat belajar data analyst, saya ingin tahu skill apa yang paling banyak dicari di lowongan data job, dan apakah menguasai lebih banyak skill berhubungan dengan gaji yang lebih tinggi. Karena itu saya menganalisis data lowongan tahun 2023 untuk menjawab dua pertanyaan tersebut.  
