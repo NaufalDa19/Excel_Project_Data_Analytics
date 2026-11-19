@@ -17,7 +17,7 @@ Skill Excel berikut dipakai untuk analisis:
 
 ### :three: Dataset Data Jobs
 Dataset yang dipakai di proyek ini berisi informasi lowongan Data Science dari dunia nyata tahun 2023. Dataset ini tersedia lewat course Excel Luke Barousse ([lukebarousse.com/excel](https://www.lukebarousse.com/excel)), yang menjadi dasar untuk berlatih menganalisis data dengan Excel. Isinya mencakup informasi rinci tentang:
-- 🧑‍💼 **Job title** (posisi)
+- 🧑‍💼 **Job Title** (posisi)
 - 💰 **Gaji**
 - 📍 **Lokasi**
 - 🛠️ **Skill**
