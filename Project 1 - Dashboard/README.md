@@ -30,4 +30,4 @@ Dataset yang dipakai di proyek ini berisi informasi lowongan Data Science dari d
 - 🛠️ **Fitur Excel:** Menggunakan fitur bar chart (dengan format nilai gaji) dan tata letak yang dirapikan agar mudah dibaca.
 - 🎨 **Pilihan Desain:** Bar chart horizontal untuk membandingkan median gaji antar posisi secara visual.
 - 📉 **Pengorganisasian Data:** Job title diurutkan dari gaji tertinggi ke terendah agar lebih mudah dibaca.
-- 💡 **Insight yang Didapat:** Chart ini memudahkan melihat tren gaji dengan cepat. Dalam data ini, posisi Senior dan Engineer bergaji lebih tinggi daripada posisi Analyst.
+- 💡 **Insight yang Didapat:** Dari chart ini, tren gaji bisa dilihat dengan cepat. Dalam data ini, posisi Senior dan Engineer bergaji lebih tinggi daripada posisi Analyst.
