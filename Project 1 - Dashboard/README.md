@@ -42,7 +42,7 @@ Dataset yang dipakai di proyek ini berisi informasi lowongan Data Science dari d
 - 💡 **Insight yang Didapat:** Mengidentifikasi kesenjangan gaji serta menampilkan rentang gaji terendah hingga tertinggi antarnegara.
 
 ### 🧮 Rumus dan Fungsi
-#### 💰 Median Gaji Berdasarkan Jenis Pekerjaan
+#### 💰 Median Gaji Berdasarkan Job Title
 
 ```
 =MEDIAN(
@@ -55,4 +55,9 @@ IF(
 )
 )
 ```
+
+- d
+- d
+- d
+- d
 
