@@ -1,4 +1,4 @@
-# Excel_Project_Data_Analytics
-Proyek course untuk mengasah skill Excel: dashboard dan analisis gaji data job (32 ribu+ baris) dengan Power Query dan PivotTable.
+# Proyek Analitik Data Excel
 
-Saya edit ini di github
+## Salary Dashboard
+![1 Salary Dashboard Final Dashboard]("https://github.com/user-attachments/assets/740e6080-15f6-4c52-9724-4b7c4ce9c943")
