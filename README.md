@@ -12,7 +12,7 @@ Dashboard Excel interaktif untuk melihat gaji data job dari data lowongan tahun 
 Analisis gaji dan skill data job dari data lowongan tahun 2023, ditampilkan dalam dua chart: (1) hubungan antara jumlah skill yang diminta dan gaji, dan (2) skill teratas yang diminta di lowongan data job.
 
 Saat belajar data analyst, saya ingin tahu skill apa yang paling banyak dicari di lowongan data job, dan apakah menguasai lebih banyak skill berhubungan dengan gaji yang lebih tinggi. Karena itu saya menganalisis data lowongan tahun 2023 untuk menjawab dua pertanyaan tersebut.  
-[Lihat file dashboard excel](<Project 2 - Dashboard>)
+[Lihat file dashboard excel](<Project 2 - Analysis>)
 
 ![2 Project Analysis Chart 1](https://github.com/user-attachments/assets/ff137ec0-f4d4-43ba-a65b-8d882e8c7a78)
 ![2 Project Analysis Chart 3](https://github.com/user-attachments/assets/0ea30ea2-5211-4e75-ba75-18d2985f09d2)
