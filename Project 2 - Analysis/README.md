@@ -1,0 +1,180 @@
+# Analisis Proyek 2
+
+## Pendahuluan
+
+Sebagai seseorang yang pernah berada di posisi pencari kerja, saya merasa informasi berbasis data mengenai peran dan *skill* yang paling optimal di pasar *data science* masih tergolong minim. Karena itu, proyek ini disusun untuk membedah kebutuhan *skill* dari pemberi kerja utama sekaligus melihat bagaimana cara meraih kompensasi yang lebih tinggi.
+
+### Pertanyaan yang Dianalisis
+
+Untuk memetakan dinamika pasar kerja di bidang *data science*, analisis ini diarahkan pada empat pertanyaan utama:
+
+1. **Apakah semakin banyak *skill* berkaitan dengan gaji yang lebih besar?**
+2. **Bagaimana gambaran gaji untuk posisi data di berbagai wilayah?**
+3. **Apa saja *skill* teratas yang paling banyak dimiliki praktisi data?**
+4. **Berapa kisaran gaji untuk 10 *skill* teratas tersebut?**
+
+### Skill Excel yang Digunakan
+
+Beberapa kemampuan di Microsoft Excel dimanfaatkan sepanjang proses analisis ini:
+
+- **📊 PivotTable**
+- **📈 PivotChart**
+- **🧮 DAX (Data Analysis Expressions)**
+- **🔍 Power Query**
+- **💪 Power Pivot**
+
+### Dataset Lowongan Data
+
+*Dataset* pada proyek ini bersumber dari informasi lowongan kerja *data science* di dunia nyata pada tahun 2023 dan diperoleh melalui *course* Excel yang saya ikuti sebagai bahan latihan pengolahan data di Excel.
+
+Isi datanya mencakup rincian mengenai:
+
+- **👨‍💼 Job title**
+- **💰 Gaji**
+- **📍 Lokasi**
+- **🛠️ Skill**
+
+## 1️⃣ Apakah semakin banyak *skill* berkaitan dengan gaji yang lebih besar?
+
+### 🔍 Skill: Power Query (ETL)
+
+#### 📥 Extract
+
+- Tahap awal dimulai dengan menarik data mentah dari `data_salary_all.xlsx` lewat Power Query untuk memecahnya menjadi dua *query*:
+  - 🗃️ *Query* pertama memuat keseluruhan informasi lowongan pekerjaan data.
+  - 🔧 *Query* kedua merinci daftar *skill* berdasarkan masing-masing ID lowongan.
+
+#### 🔄 Transform
+
+- Selanjutnya, setiap *query* dirapikan melalui penyesuaian tipe data kolom, penghapusan kolom yang tidak diperlukan, pembersihan teks dari kata tertentu, serta perapian spasi berlebih.
+  - 📊 data_jobs_all
+
+        ![2_Project_Analysis_Screenshot1.png](/0_Resources/Images/2_Project_Analysis_Screenshot1.png)
+
+- 🛠️ data_job_skills
+
+        ![2_Project_Analysis_Screenshot2.png](/0_Resources/Images/2_Project_Analysis_Screenshot2.png)
+
+#### 🔗 Load
+
+- Pada tahap akhir, kedua *query* hasil pembersihan dimuat ke dalam *workbook* sebagai pijakan untuk analisis lanjutan.
+  - 📊 data_jobs_all
+
+        ![2_Project_Analysis_Screenshot3.png](/0_Resources/Images/2_Project_Analysis_Screenshot3.png)
+
+- 🛠️ data_job_skills
+
+        ![2_Project_Analysis_Screenshot4.png](/0_Resources/Images/2_Project_Analysis_Screenshot4.png)
+
+### 📊 Analisis
+
+#### 💡 Temuan Analisis
+
+- 📈 Semakin banyak jumlah *skill* yang dicantumkan pada lowongan, nilai median gajinya cenderung ikut meningkat—terutama pada peran seperti Senior Data Engineer dan Data Scientist.
+- 💼 Posisi dengan tuntutan *skill* yang lebih sedikit, seperti Business Analyst, umumnya menawarkan gaji yang lebih rendah, menandakan bahwa kombinasi *skill* yang lebih spesifik bernilai lebih tinggi di pasar.
+
+    ![2_Project_Analysis_Chart1.png](/0_Resources/Images/2_Project_Analysis_Chart1.png)
+
+#### 🤔 Implikasinya
+
+- Pola ini menegaskan pentingnya memperluas penguasaan *skill* yang relevan, khususnya bagi siapa pun yang menargetkan posisi dengan kompensasi lebih besar.
+
+## 2️⃣ Bagaimana gambaran gaji untuk posisi data di berbagai wilayah?
+
+### 🧮 Skill: PivotTable & DAX
+
+#### 📈 PivotTable
+
+- 🔢 PivotTable disusun menggunakan Data Model yang sudah dibangun melalui Power Pivot.
+- 📊 Kolom `job_title_short` ditempatkan pada area *rows*, sedangkan `salary_year_avg` dimasukkan ke area *values*.
+- 🧮 Setelah itu ditambahkan *measure* baru guna menghitung nilai median gaji khusus untuk lowongan di Amerika Serikat.
+    ```
+    =CALCULATE(
+        MEDIAN(data_jobs_all[salary_year_avg]),
+        data_jobs_all[job_country] = "United States")
+    ```
+
+#### 🧮 DAX
+
+- Perhitungan median gaji tahunan secara umum dilakukan dengan formula DAX berikut.
+
+    ```
+    Median Salary := MEDIAN(data_jobs_all[salary_year_avg])
+    ```
+
+### 📊 Analisis
+
+#### 💡 Temuan Analisis
+
+- 💼 Peran seperti Senior Data Engineer dan Data Scientist mencatatkan median gaji yang tinggi baik di AS maupun di luar AS, menunjukkan permintaan global yang kuat terhadap keahlian data tingkat lanjut.
+- 💰 Selisih gaji antara posisi di AS dan non-AS terlihat cukup mencolok pada pekerjaan berteknologi tinggi, yang kemungkinan dipengaruhi oleh pemusatan industri teknologi di AS.
+
+    ![2_Project_Analysis_Chart2.png](/0_Resources/Images/2_Project_Analysis_Chart2.png)
+
+#### 🤔 Implikasinya
+
+- Gambaran perbedaan gaji ini berguna untuk perencanaan karier maupun negosiasi kompensasi agar penawaran selaras dengan standar pasar dan kondisi geografis.
+
+## 3️⃣ Apa saja *skill* teratas yang paling banyak dimiliki praktisi data?
+
+### 🔧 Skill: Power Pivot
+
+#### 💪 Power Pivot
+
+- 🔗 Tabel `data_jobs_all` dan `data_jobs_skills` digabungkan ke dalam satu Data Model terpadu.
+- 🧹 Karena pembersihan data sudah dilakukan sebelumnya di Power Query, relasi antar kedua tabel dapat terbentuk dengan rapi di Power Pivot.
+
+#### 🔗 Data Model
+
+- Keterkaitan antar kedua tabel dihubungkan melalui kolom `job_id`.
+
+    ![2_Project_Analysis_Screenshot5.png](/0_Resources/Images/2_Project_Analysis_Screenshot5.png)
+
+#### 📃 Menu Power Pivot
+
+- Menu Power Pivot dimanfaatkan untuk menyempurnakan Data Model sekaligus mempermudah pembuatan *measure*.
+
+    ![2_Project_Analysis_Screenshot6.png](/0_Resources/Images/2_Project_Analysis_Screenshot6.png)
+
+### 📊 Analisis
+
+#### 💡 Temuan Analisis
+
+- 💻 SQL dan Python tampil paling dominan di deretan *skill* utama bidang data, sejalan dengan peran keduanya sebagai fondasi pengolahan dan analisis data.
+- ☁️ Teknologi berbasis *cloud* seperti AWS dan Azure juga muncul cukup menonjol, mencerminkan pergeseran industri ke arah layanan *cloud* dan *big data*.
+
+    ![2_Project_Analysis_Chart3.png](/0_Resources/Images/2_Project_Analysis_Chart3.png)
+
+#### 🤔 Implikasinya
+
+- Memahami *skill* yang paling banyak dibutuhkan membantu praktisi tetap kompetitif sekaligus memberi arah bagi program pelatihan untuk memprioritaskan teknologi yang paling berdampak.
+
+## 4️⃣ Berapa kisaran gaji untuk 10 *skill* teratas tersebut?
+
+### 📊 Skill: Visualisasi Lanjutan (PivotChart)
+
+#### 📈 PivotChart
+
+- Dibuat *combo* PivotChart dari PivotTable untuk memplot median gaji dan persentase peluang *skill* (*skill likelihood*).
+  - 🪙 **Sumbu Utama (*Primary Axis*):** Median Salary (dalam format Clustered Column)
+  - 👍 **Sumbu Kedua (*Secondary Axis*):** Skill Likelihood (dalam format Line with Markers)
+- Tampilan grafik disesuaikan dengan menambahkan judul sumbu, menyembunyikan garis *skill likelihood*, serta mengubah bentuk *marker* menjadi *diamond*.
+
+### 📊 Analisis
+
+#### 💡 Temuan Analisis
+
+- 💰 Median gaji yang lebih tinggi banyak berkaitan dengan *skill* seperti Python, Oracle, dan SQL, menandakan peran pentingnya di posisi teknologi bergaji besar.
+- 📉 *Skill* seperti PowerPoint dan Word berada di posisi terbawah untuk median gaji maupun *likelihood*, yang mengindikasikan tingkat spesialisasi dan permintaan yang lebih rendah pada sektor bergaji tinggi.
+
+    ![2_Project_Analysis_Chart4.png](/0_Resources/Images/2_Project_Analysis_Chart4.png)
+
+#### 🤔 Implikasinya
+
+- Grafik ini mempertegas manfaat mengalokasikan waktu untuk mempelajari *skill* bernilai tinggi seperti Python dan SQL yang terbukti selaras dengan peran bergaji lebih besar, khususnya bagi yang ingin mengoptimalkan penghasilan di industri teknologi.
+
+## Kesimpulan
+
+Berangkat dari pengalaman sebagai pencari kerja sekaligus peminat data, proyek berbasis Excel ini dikerjakan untuk menggali wawasan praktis mengenai pasar kerja *data science*. Dengan memanfaatkan *dataset* lowongan kerja nyata, analisis dilakukan pada aspek *job title*, gaji, lokasi, dan *skill* inti. Melalui fitur Excel seperti Power Query, PivotTable, DAX, dan berbagai grafik, terlihat adanya keterkaitan antara penguasaan ragam *skill* dan tingkat gaji yang lebih tinggi, terutama pada Python, SQL, serta teknologi *cloud*.
+
+Harapannya, dokumentasi proyek ini bisa menjadi referensi praktis bagi insan data sekaligus memberi gambaran menyeluruh mengenai *skill* yang relevan untuk meraih posisi dengan gaji lebih kompetitif.
