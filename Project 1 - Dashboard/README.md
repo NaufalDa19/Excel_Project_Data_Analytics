@@ -56,8 +56,47 @@ IF(
 )
 ```
 
-- d
-- d
-- d
-- d
+- 🔍 **Filter Multikriteria:** Menyaring data berdasarkan *job title*, negara, dan tipe jadwal kerja, sekaligus mengabaikan baris yang nilai gajinya masih kosong.
+- 📊 **Array Formula:** Menggabungkan fungsi `MEDIAN()` dengan logika `IF()` bersarang untuk memproses sekumpulan data (*array*) secara langsung.
+- 🎯 **Insight Spesifik:** Menghasilkan gambaran gaji yang terarah sesuai kombinasi *job title*, wilayah, dan tipe jadwal tertentu.
+- 🔢 **Tujuan Rumus:** Mengisi tabel di bawahnya dengan nilai median gaji yang disesuaikan menurut *job title*, negara, serta tipe yang dipilih.
 
+🍽️ Tabel Pendukung
+
+<img width="265" height="220" alt="1_Salary_Dashboard_Screenshot1" src="https://github.com/user-attachments/assets/dd45d5ce-a569-4a9d-9ddd-48cfa892ba01" />
+
+📉 Implementasi Dashboard
+
+<img src="https://github.com/user-attachments/assets/3a2d6030-7de3-4cd3-9caa-84b64806e619" width="400" height="500" alt="Salary Dashboard Title" />
+
+#### ⏰ Jumlah Job Schedule Type
+
+```
+=FILTER(J2#,(NOT(ISNUMBER(SEARCH("and",J2#))+ISNUMBER(SEARCH(",",J2#))))*(J2#<>0))
+```
+
+- 🔎 **Unique List Generation:** Rumus Excel di bawah ini memanfaatkan fungsi `FILTER()` untuk menyaring data dengan mengecualikan entri yang mengandung `"and"` atau tanda koma, serta mengabaikan nilai nol.
+- 🔢 **Tujuan Rumus:** Rumus ini mengisi tabel di bawahnya untuk menghasilkan daftar *job schedule type* yang unik.
+
+🍽️ Tabel Pendukung
+
+<img width="195" height="119" alt="1_Salary_Dashboard_Screenshot2" src="https://github.com/user-attachments/assets/88f88b08-8499-4f12-9ed5-701ae4f94ede" />
+
+📉 Implementasi Dashboard
+
+<img src="https://github.com/user-attachments/assets/3ad84945-6818-41a0-bae2-f9e0bec7da26" width="400" height="500" alt="Salary Dashboard Title" />
+
+### ❎ Validasi Data
+
+#### 🔎 Daftar Terfilter
+
+- 🔒 **Validasi Data yang Lebih Terarah:** Menerapkan daftar yang sudah difilter sebagai aturan *data validation* pada opsi `Job Title`, `Country`, dan `Type` di tab *Data* membantu:
+  - 🎯 Membatasi input pengguna hanya pada tipe jadwal yang sudah tersedia dan tervalidasi
+  - 🚫 Mencegah entri yang keliru atau tidak konsisten
+  - 👥 Meningkatkan kenyamanan dan kepraktisan penggunaan *dashboard* secara keseluruhan
+
+<img src="https://github.com/user-attachments/assets/ecf1c462-6133-4c6a-82c9-525e4cb0437d" width="425" height="400" alt="Salary Dashboard Data Validation" />
+
+## Kesimpulan
+
+Dashboard ini dibuat untuk menampilkan insight tren gaji di berbagai job title bidang data. Menggunakan dataset dari course Excel, dashboard ini membantu pengguna mengambil keputusan yang lebih tepat terkait jalur karier mereka sekaligus melihat bagaimana lokasi dan tipe pekerjaan memengaruhi besaran gaji.
